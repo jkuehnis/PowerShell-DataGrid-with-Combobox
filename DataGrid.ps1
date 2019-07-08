@@ -29,7 +29,7 @@ $inputXML = @"
                         <DataTemplate>
                                <ComboBox
                                ItemsSource="{Binding Path=Combobox}"
-                               SelectedItem="{Binding Path=Result, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                               SelectedItem="{Binding Path=Combobox, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
                             </ComboBox>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
