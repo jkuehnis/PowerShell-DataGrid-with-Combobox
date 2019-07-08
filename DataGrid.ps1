@@ -29,7 +29,7 @@ $inputXML = @"
                         <DataTemplate>
                                <ComboBox
                                ItemsSource="{Binding Path=Combobox}"
-                               SelectedItem="{Binding Path=Combobox, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+                               SelectedItem="{Binding Path=Combobox, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
                             </ComboBox>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
@@ -112,10 +112,12 @@ class myRow{
 }
 
 $test1 = New-Object myRow -Property @{Hostname = "test1"; Combobox = "TEST1","TEST2" }
+$test2 = New-Object myRow -Property @{Hostname = "test2"; Combobox = "TEST1","TEST2" }
+$test3 = New-Object myRow -Property @{Hostname = "test3"; Combobox = "TEST1","TEST2" }
 
 
 
-$WPFDataGrid.ItemsSource = @($test1)
+$WPFDataGrid.ItemsSource = @($test1,$test2,$test3)
 #===========================================================================
 # Shows the form
 #===========================================================================
